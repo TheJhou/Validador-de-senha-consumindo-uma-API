@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Senha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card">
+        <div class="score-card">
+            <span class="score-label">Score</span>
+            <span id="score-value" class="score-value">0</span>
+            <span class="score-max">/ 100</span>
+        </div>
+        
+        <h1>Validador de Senha</h1>
+        
+        <div class="input-group">
+            <label for="password">Digite sua senha:</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="Digite sua senha">
+                <button type="button" id="toggle-password" class="toggle-btn">👁️</button>
+            </div>
+        </div>
+
+        <div class="strength-meter">
+            <div class="strength-bar">
+                <div id="strength-fill" class="strength-fill"></div>
+            </div>
+            <span id="strength-text"></span>
+        </div>
+
+        <ul class="requirements">
+            <li id="req-length">✓ Mínimo 8 caracteres</li>
+            <li id="req-uppercase">✓ Letra maiúscula (A-Z)</li>
+            <li id="req-lowercase">✓ Letra minúscula (a-z)</li>
+            <li id="req-number">✓ Número (0-9)</li>
+            <li id="req-special">✓ Caractere especial (!@#$%...)</li>
+        </ul>
+
+        <div class="personal-data-check">
+            <label class="toggle-switch">
+                <input type="checkbox" id="personal-data">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">A senha contém dados pessoais (nome, data de nascimento, etc.)?</span>
+        </div>
+
+        <div class="personal-data-check">
+            <label class="toggle-switch">
+                <input type="checkbox" id="compromised-password">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">A senha já foi comprometida ou compartilhada alguma vez?</span>
+        </div>
+
+        <div id="personal-data-warning" class="personal-data-warning">
+            ⚠️ Alerta: Senhas com dados pessoais podem causar cruzamento de dados e comprometer sua segurança. Evite usar informações pessoais em suas senhas.
+        </div>
+
+        <div id="compromised-warning" class="personal-data-warning">
+            ⚠️ Alerta: Senhas já comprometidas ou compartilhadas não são seguras. Use uma senha única e nunca reutilize senhas.
+        </div>
+
+        <div id="api-status" class="api-status"></div>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
